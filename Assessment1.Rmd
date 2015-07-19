@@ -53,8 +53,12 @@ daily_steps
 2. Make a histogram of the number of steps taken each day.
 
 ```{r}
+if (!file.exists('plots')) {
+        dir.create('plots')
+      }
+      png(filename='plots/plot1.png',width=480,height=480,units='px')
 hist(daily_steps$total_steps, breaks = 20, xlab = "Mean of daily steps", main = " ")
-
+dev.off()
 ```
 
 3. Compute mean and median of the total number of steps taken per day.
@@ -92,12 +96,18 @@ I am going to use lattice plotting system.
 
 
 ```{r}
+if (!file.exists('plots')) {
+        dir.create('plots')
+      }
+      png(filename='plots/plot2.png',width=480,height=480,units='px')
+
 xyplot(StepsInterval$averageSteps ~ byInterval$interval,
        data = StepsInterval,
        type = "l",
        xlab = "5-minute interval of a day",
        ylab = "averaged number of steps across all days"
        )
+dev.off()
 
 ```
 
@@ -153,9 +163,14 @@ head(my_daily_steps)
 4. Make a histogram and compare it the original from part 1.
 
 ```{r}
+if (!file.exists('plots')) {
+        dir.create('plots')
+      }
+      png(filename='plots/plot3.png',width=480,height=480,units='px')
 hist(my_daily_steps$totSteps,
      breaks = 20,
      xlab = "mean of daily steps", main = "")
+dev.off()
 ```
 
 From this histogram, we notice a more normal distributed shape than the original histogram.
@@ -208,10 +223,16 @@ head(myda)
 2. Make a time series plot
 
 ```{r}
+if (!file.exists('plots')) {
+        dir.create('plots')
+      }
+      png(filename='plots/plot4.png',width=480,height=480,units='px')
 actv <- ddply(myda, .(interval, Week), summarise, avgsteps = mean(steps))
 
 xyplot(avgsteps ~ interval | Week, data = actv, type = "l", layout = c(1, 2), ylab = "Number of steps")
+dev.off()
 ```
+
 
 
 ```
