@@ -10,17 +10,15 @@ Reproducible research: Assessment #1
 ```
 
 >* Required library packages
+
 ```{r}
 library(data.table)
 library(plyr)
 library(dplyr)
 library(lattice)
-
-
 ```
 
 >* Reading data
-
 ```{r, echo= TRUE} 
 activity <- read.csv("/Coursera/DataScience/ReproducibleResearch/Project/activity.csv")
 dt <- data.table(activity)
