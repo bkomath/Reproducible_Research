@@ -139,6 +139,7 @@ Note that there are a number of days/intervals where there are missing values (c
 ```{r}
 sum(is.na(dt))
 ```
+## [1] 2304
 2. I am going to use **mean average** as an alternative to replace missing value in the dataset.
 ```{r}
 myda <- left_join(dt, StepsInterval)
@@ -225,4 +226,4 @@ xyplot(avgsteps ~ interval | Week, data = actv, type = "l", layout = c(1, 2), yl
 dev.off()
 ```
 
-
+Please Go to the plot folder to see the figure of the assessment1
