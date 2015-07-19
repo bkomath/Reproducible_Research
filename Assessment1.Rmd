@@ -6,7 +6,7 @@ Reproducible research: Assessment #1
 >* setting working directory
 
 ```{r echo = TRUE}
-#setwd("C:/Coursera/DataScience/ReproducibleResearch/Project")
+#setwd("/Coursera/DataScience/ReproducibleResearch/Project")
 ```
 
 >* Required library packages
@@ -22,7 +22,7 @@ library(lattice)
 >* Reading data
 
 ```{r, echo= TRUE} 
-activity <- read.csv("C:/Coursera/DataScience/ReproducibleResearch/Project/activity.csv")
+activity <- read.csv("/Coursera/DataScience/ReproducibleResearch/Project/activity.csv")
 dt <- data.table(activity)
 str(dt)
 head(dt, 20)
@@ -118,7 +118,8 @@ tmax <- StepsInterval[[ which.max(StepsInterval$averageSteps), "interval"]]
  ## which(StepsInterval= 835)
 ```
 
-The time is **```r tmax ```** minutes at **```r th```** th steps.
+The time is **```835```** minutes at **```104```** th steps.
+
 ------
 
 ## Imputing missing values
@@ -224,12 +225,4 @@ xyplot(avgsteps ~ interval | Week, data = actv, type = "l", layout = c(1, 2), yl
 dev.off()
 ```
 
-
-<<<<<<< HEAD
-
-```
-
-
-=======
->>>>>>> ec8d9d98b5ebce4adbb164691088848fc71dfb01
 
