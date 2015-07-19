@@ -69,9 +69,9 @@ Median_Of_TotalSteps <- median(daily_steps$total_steps)
 
 ```
 
->* The mean of the number of steps taken per day is ```r Mean_Of_TotalSteps```.
+>* The mean of the number of steps taken per day is ```9354.2295082```.
 
->* The median of the number of steps taken per day is ```r Median_Of_TotalSteps```.
+>* The median of the number of steps taken per day is ```10395```.
 
 -------
 
@@ -82,6 +82,7 @@ Median_Of_TotalSteps <- median(daily_steps$total_steps)
 2. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 
 ***Answers:***
+
 Let make some data processing!
 ```{r}
 byInterval <- group_by(dt, interval)
@@ -168,21 +169,21 @@ dev.off()
 ```
 From this histogram, we notice a more normal distributed shape than the original histogram.
 
->* Mean is then
+>* Mean
 
 ```{r}
 mean(my_daily_steps$totSteps)
-
 ```
- which seems to be greater than the mean in the part 1.
+## [1] 10766.19
+
+ Which seems to be greater than the mean in the part 1.
  
  >* Median
 
 ```{r}
 median(my_daily_steps$totSteps)
-
 ```
-
+## [1] 10766.19
 This value is also greater than the median from part 1.
 
 **Conclusion:**
@@ -199,7 +200,8 @@ For this part the weekdays() function may be of some help here. Use the dataset 
 
 2. Make a panel plot containing a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis). See the README file in the GitHub repository to see an example of what this plot should look like using simulated data.
 
-***Answers:**
+***Answers:***
+
 1. Create a new factor variable with two levels "weekday" and "weekend".
 
 ```{r}
