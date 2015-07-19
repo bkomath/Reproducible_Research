@@ -213,6 +213,13 @@ myda$Week <- as.factor(myda$Week)
 head(myda)
 
 ```
+######   interval     steps       date averageSteps    Week
+###### 1        0  1.716981 2012-10-01     1.716981 weekday
+###### 2        0  0.000000 2012-10-02     1.716981 weekday
+###### 3        0  0.000000 2012-10-03     1.716981 weekday
+###### 4        0 47.000000 2012-10-04     1.716981 weekday
+###### 5        0  0.000000 2012-10-05     1.716981 weekday
+###### 6        0  0.000000 2012-10-06     1.716981 weekend
 2. Make a time series plot
 
 ```{r}
