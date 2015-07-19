@@ -39,7 +39,7 @@ For this part of the assignment, you can ignore the missing values in the datase
 2. If you do not understand the difference between a histogram and a barplot, research the difference between them. Make a histogram of the number of steps taken each day.
 3. Calculate and report the mean and median of the total number of steps taken per day.
 
-***Solutions:***
+***Answers:***
 
 1. Here I am using the dplyr package to group the number of steps taken per day.
 
@@ -81,7 +81,7 @@ Median_Of_TotalSteps <- median(daily_steps$total_steps)
 
 2. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 
-***Solution:***
+***Answers:***
 Let make some data processing!
 ```{r}
 byInterval <- group_by(dt, interval)
@@ -110,7 +110,6 @@ xyplot(StepsInterval$averageSteps ~ byInterval$interval,
 dev.off()
 
 ```
-
 2. Find the time interval containg the maximum number of steps 
 ```{r}
 tmax <- StepsInterval[[ which.max(StepsInterval$averageSteps), "interval"]]
@@ -120,8 +119,6 @@ tmax <- StepsInterval[[ which.max(StepsInterval$averageSteps), "interval"]]
 ```
 
 The time is **```r tmax ```** minutes at **```r th```** th steps.
-
-
 ------
 
 ## Imputing missing values
@@ -142,14 +139,12 @@ Note that there are a number of days/intervals where there are missing values (c
 ```{r}
 sum(is.na(dt))
 ```
-
 2. I am going to use **mean average** as an alternative to replace missing value in the dataset.
 ```{r}
 myda <- left_join(dt, StepsInterval)
 myda$steps <- ifelse(is.na(myda$steps), myda$averageSteps, myda$steps)
 head(myda, 10)
 ```
-
 3. New dataset
 
 ```{r}
@@ -157,9 +152,7 @@ my_daily_steps <- summarize(group_by(myda, date), totSteps = sum(steps))
 
 head(my_daily_steps)
 
-
 ```
-
 4. Make a histogram and compare it the original from part 1.
 
 ```{r}
@@ -172,7 +165,6 @@ hist(my_daily_steps$totSteps,
      xlab = "mean of daily steps", main = "")
 dev.off()
 ```
-
 From this histogram, we notice a more normal distributed shape than the original histogram.
 
 >* Mean is then
@@ -206,7 +198,7 @@ For this part the weekdays() function may be of some help here. Use the dataset 
 
 2. Make a panel plot containing a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis). See the README file in the GitHub repository to see an example of what this plot should look like using simulated data.
 
-***Answers**
+***Answers:**
 1. Create a new factor variable with two levels "weekday" and "weekend".
 
 ```{r}
@@ -219,7 +211,6 @@ myda$Week <- as.factor(myda$Week)
 head(myda)
 
 ```
-
 2. Make a time series plot
 
 ```{r}
@@ -234,8 +225,11 @@ dev.off()
 ```
 
 
+<<<<<<< HEAD
 
 ```
 
 
+=======
+>>>>>>> ec8d9d98b5ebce4adbb164691088848fc71dfb01
 
